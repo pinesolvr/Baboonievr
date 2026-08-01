@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BABOONIEVR: Ascend The Digital Jungle</title>
+    <style>
+        /* --- Global Styles & Reset --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #05070a; /* Deep space blue/black */
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Navigation Bar --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(5, 7, 10, 0.9); /* Slightly transparent dark */
+            position: fixed; /* Sticky header */
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1a2533;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #ff5722; /* Orange accent */
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #a0aab5;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+        .nav-btn {
+            background-color: transparent;
+            border: 2px solid #ff5722;
+            padding: 8px 20px;
+            border-radius: 4px;
+            color: #ff5722;
+            font-weight: bold;
+        }
+
+        .nav-btn:hover {
+            background-color: #ff5722;
+            color: #ffffff;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh; /* Full viewport height */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 150px 50px 50px; /* Extra top padding for fixed header */
+            background: radial-gradient(circle at center, #1a2533 0%, #05070a 70%);
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 50%;
+            padding-right: 50px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ff5722; /* Orange for "Digital Jungle" */
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #a0aab5;
+            margin-bottom: 30px;
+        }
+
+        .hero-visual {
+            flex: 1;
+            max-width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-visual img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 30px rgba(255, 87, 34, 0.3)); /* Optional glow effect */
+        }
+
+        /* --- Main Buttons --- */
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background-color: #ff5722;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ff784e;
+            transform: translateY(-2px);
+        }
+
+        /* --- Features Section --- */
+        .features {
+            padding: 100px 50px;
+            text-align: center;
+            background-color: #0a0f14; /* Slightly lighter dark */
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: #161f2b;
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid #1a2533;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: #ff5722;
+        }
+
+        .feature-icon {
+            width: 60px; /* Adjust based on icon size */
+            height: 60px;
+            margin-bottom: 20px;
+            /* Placeholder for actual icon images */
+            background-color: #2c3e50;
+            border-radius: 50%;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: #a0aab5;
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 50px;
+            text-align: center;
+            background-color: #05070a;
+            border-top: 1px solid #1a2533;
+            color: #667585;
+            font-size: 0.9rem;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 120px;
+            }
+            .hero-content, .hero-visual {
+                max-width: 100%;
+                padding: 0;
+            }
+            .hero-visual {
+                margin-top: 50px;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr; /* Stack features on small screens */
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+            nav ul {
+                display: none; /* Hide nav links on mobile for simplicity */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <a href="#" class="logo">Baboonievr</a>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Game Features</a></li>
+                <li><a href="#updates">Updates</a></li>
+                <li><a href="#blog">Dev Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#get-game" class="nav-btn">Get The Game</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>BABOONIEVR: ASCEND THE <span>DIGITAL JUNGLE</span></h1>
+            <p>Experience the ultimate VR platformer adventure. Swing, climb, and explore a vibrant cyber-world.</p>
+            <button class="cta-button">PLAY NOW ON META QUEST</button>
+        </div>
+        <div class="hero-visual">
+            <!-- Replace 'monkey-hero.png' with the filename of your generated image -->
+            <img src="monkey-hero.png" alt="BaboonieVR Character Illustration">
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <!-- Feature Card 1 -->
+            <div class="feature-card">
+                <div class="feature-icon"></div> <!-- Add icon image here -->
+                <h3>DYNAMIC GAMEPLAY</h3>
+                <p>Fluid movement mechanics allow you to swing, climb, and navigate complex levels with primate agility.</p>
+            </div>
+            <!-- Feature Card 2 -->
+            <div class="feature-card">
+                <div class="feature-icon"></div> <!-- Add icon image here -->
+                <h3>IMMERSIVE WORLDS</h3>
+                <p>Explore lush, vibrant digital jungles and neon-lit cyber-cities built specifically for VR.</p>
+            </div>
+            <!-- Feature Card 3 -->
+            <div class="feature-card">
+                <div class="feature-icon"></div> <!-- Add icon image here -->
+                <h3>GLOBAL LEADERBOARDS</h3>
+                <p>Compete against players worldwide for the fastest times and highest scores in challenge modes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 BaboonieVR Studios. All rights reserved.</p>
+        <p>Built for Meta Quest | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+</body>
+</html>
